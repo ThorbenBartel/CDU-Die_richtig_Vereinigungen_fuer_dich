@@ -1,0 +1,44 @@
+{
+  "fragen": [
+    {
+      "text": "Soll die CDU weiterhin eine liberale Wirtschaftspolitik unterstützen?",
+      "effekte": {
+        "zustimmen": ["MIT", "JU"],
+        "neutral": [],
+        "ablehnen": ["CDA"]
+      }
+    },
+    {
+      "text": "Soll die CDU sich stärker für die Interessen von Arbeitnehmern einsetzen?",
+      "effekte": {
+        "zustimmen": ["CDA"],
+        "neutral": [],
+        "ablehnen": ["MIT"]
+      }
+    },
+    {
+      "text": "Soll die CDU die Digitalisierung stärker vorantreiben?",
+      "effekte": {
+        "zustimmen": ["MIT", "JU"],
+        "neutral": [],
+        "ablehnen": ["SU", "CDA"]
+      }
+    },
+    {
+      "text": "Soll die CDU die Rente stärker absichern und ausbauen?",
+      "effekte": {
+        "zustimmen": ["SU", "CDA"],
+        "neutral": [],
+        "ablehnen": ["JU", "MIT"]
+      }
+    },
+    {
+      "text": "Soll die CDU sich aktiver für den Umweltschutz und die Klimapolitik einsetzen?",
+      "effekte": {
+        "zustimmen": ["JU", "EAK"],
+        "neutral": [],
+        "ablehnen": ["MIT", "OMV", "SU"]
+      }
+    }
+  ]
+}

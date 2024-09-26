@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>CDU Vereinigungen Matcher - Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Finde die passende CDU-Vereinigung</h1>
+        <div id="fragencontainer">
+            <div id="fragenummer"></div>
+            <div id="fragetext"></div>
+            <div id="antworten">
+                <button onclick="verarbeiteAntwort('zustimmen')">Zustimmen</button>
+                <button onclick="verarbeiteAntwort('neutral')">Neutral</button>
+                <button onclick="verarbeiteAntwort('ablehnen')">Ablehnen</button>
+            </div>
+        </div>
+        <div id="ergebniscontainer" style="display: none;">
+            <h2>Dein Ergebnis</h2>
+            <div id="ergebnistext"></div>
+            <button onclick="location.reload()">Nochmal starten</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>CDU Vereinigungen Matcher</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <img src="CDU-Gesamtlogo_transparent_RGB.png" alt="CDU Logo" style="max-width: 200px; display: block; margin: 0 auto 20px;">
+        <h1>Willkommen zum CDU Vereinigungen Matcher</h1>
+        <p>Beantworte die folgenden Fragen und finde heraus, welche CDU-Vereinigung am besten zu dir passt.</p>
+        <button id="start-button">Jetzt starten</button>
+    </div>
+
+    <script>
+        // Event-Listener für den Start-Button, um zum Quiz zu navigieren
+        document.getElementById('start-button').addEventListener('click', function() {
+            window.location.href = 'quiz.html';  // Weiterleitung zur quiz.html Seite
+        });
+    </script>
+</body>
+</html>
