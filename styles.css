@@ -12,133 +12,158 @@
 body {
     font-family: var(--body-font);
     margin: 0;
-    padding: 20px;
-    background-color: var(--cdu-white);
+    padding: 0;
+    background-color: #2d3c4b; /* Wahl-O-Mat Stil */
 }
 
 #app {
     max-width: 800px;
     margin: auto;
-    background-color: var(--cdu-white);
     padding: 20px;
-    border-radius: 0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--cdu-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Überschriften */
+header {
+    text-align: right;  /* Logo rechts ausrichten */
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--cdu-turquoise);
+}
+
+.logo-container {
+    text-align: right;  /* Logo rechtsbündig */
+}
+
+.logo {
+    max-width: 150px;
+    margin-top: 10px;
+}
+
+.title-container {
+    text-align: center;  /* Text zentrieren */
+    margin-top: 20px;    /* Abstand vom Logo */
+}
+
 h1, h2 {
-    color: var(--cdu-blue);
-    font-family: var(--headline-font);
-    font-weight: 800;
+    color: var(--cdu-black);
 }
 
 h1 {
     font-size: 2.5em;
-    margin-bottom: 0.5em;
+    font-family: var(--headline-font);
+    margin-bottom: 10px;
 }
 
 h2 {
     font-size: 1.8em;
-    margin-bottom: 0.5em;
+    font-family: var(--headline-font);
+    color: var(--cdu-blue);
 }
 
-/* Textzentrierung und allgemeiner Stil */
-#fragencontainer, #ergebniscontainer {
+main {
+    margin-top: 20px;
     text-align: center;
 }
 
-#fragenummer {
-    color: var(--cdu-gold);
-    font-weight: bold;
-    margin-bottom: 1em;
-}
-
-#fragetext {
+p {
     font-size: 1.2em;
-    margin-bottom: 1em;
     color: var(--cdu-black);
 }
 
-/* Buttons für die Antworten */
-#antworten {
+button {
+    padding: 15px 30px;
+    background-color: var(--cdu-turquoise);
+    border: none;
+    border-radius: 5px;
+    color: var(--cdu-white);
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--cdu-blue);
+}
+
+@media (max-width: 600px) {
+    .title-container {
+        text-align: center;  /* Text zentrieren auf mobilen Geräten */
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    button {
+        width: 100%;
+        font-size: 1em;
+    }
+}
+
+/* Ergebnisanzeige Balken-Styling */
+.ergebnis-item {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
 }
 
-#antworten button {
-    width: 80%;
-    max-width: 300px;
-    padding: 15px 20px;
-    margin: 10px 0;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: var(--cdu-turquoise);
-    border: none;
-    color: var(--cdu-white);
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-#antworten button:nth-child(2) {
-    background-color: var(--cdu-blue);
-}
-
-#antworten button:nth-child(3) {
-    background-color: var(--cdu-gold);
-}
-
-#antworten button:hover {
-    background-color: var(--cdu-blue);
-}
-
-/* Start-Button */
-#start-button {
-    width: 80%;
-    max-width: 300px;
-    padding: 15px 20px;
-    margin: 20px auto;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: var(--cdu-turquoise);
-    border: none;
-    color: var(--cdu-white);
-    display: block;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-#start-button:hover {
-    background-color: var(--cdu-blue);
-}
-
-/* Ergebnistext */
-#ergebnistext {
-    font-size: 18px;
-    margin: 20px 0;
-    white-space: pre-line;
+.ergebnis-name {
+    font-size: 1.2em;
+    font-weight: bold;
     color: var(--cdu-black);
+    margin-bottom: 10px;
 }
 
-/* Neustart-Button */
-#ergebniscontainer button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+.ergebnis-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.ergebnis-fill {
+    height: 100%;
     background-color: var(--cdu-turquoise);
-    border: none;
-    color: var(--cdu-white);
+    border-radius: 10px 0 0 10px;
+    transition: width 0.3s;
+}
+
+.ergebnis-prozent {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--cdu-blue);
+}
+
+details summary {
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--cdu-black);
+    margin-bottom: 10px;
+}
+
+.details-content {
+    padding: 10px;
+    background-color: #f9f9f9;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    margin-top: 10px;
 }
 
-#ergebniscontainer button:hover {
-    background-color: var(--cdu-blue);
+.details-content a {
+    color: var(--cdu-turquoise);
+    text-decoration: none;
+    font-weight: bold;
 }
 
-/* Responsive Design für kleinere Bildschirme */
-@media (max-width: 600px) {
-    #antworten button, #start-button {
-        width: 100%;
-    }
+.details-content a:hover {
+    text-decoration: underline;
 }

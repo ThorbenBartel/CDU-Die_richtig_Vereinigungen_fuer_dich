@@ -8,16 +8,24 @@
 </head>
 <body>
     <div id="app">
-        <img src="CDU-Gesamtlogo_transparent_RGB.png" alt="CDU Logo" style="max-width: 200px; display: block; margin: 0 auto 20px;">
-        <h1>Willkommen zum CDU Vereinigungen Matcher</h1>
-        <p>Beantworte die folgenden Fragen und finde heraus, welche CDU-Vereinigung am besten zu dir passt.</p>
-        <button id="start-button">Jetzt starten</button>
+        <header>
+            <div class="logo-container">
+                <img src="CDU-Gesamtlogo_transparent_RGB.png" alt="CDU Logo" class="logo">
+            </div>
+            <div class="title-container">
+                <h1>Willkommen zum Union O-Mat</h1>
+                <h2>Welche Union passt zu dir?</h2>
+            </div>
+        </header>
+        <main>
+            <p>Beantworte die folgenden Fragen und finde heraus, welche CDU-Vereinigung am besten zu dir passt.</p>
+            <button id="start-button">Jetzt starten</button>
+        </main>
     </div>
 
     <script>
-        // Event-Listener für den Start-Button, um zum Quiz zu navigieren
         document.getElementById('start-button').addEventListener('click', function() {
-            window.location.href = 'quiz.html';  // Weiterleitung zur quiz.html Seite
+            window.location.href = 'quiz.html';
         });
     </script>
 </body>

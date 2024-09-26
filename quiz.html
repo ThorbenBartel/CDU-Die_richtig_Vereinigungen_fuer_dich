@@ -8,7 +8,10 @@
 </head>
 <body>
     <div id="app">
-        <h1>Finde die passende CDU-Vereinigung</h1>
+        <div class="logo-container">
+            <img src="CDU-Gesamtlogo_transparent_RGB.png" alt="CDU Logo" class="logo">
+        </div>
+        <h1>Welche Union passt zu dir?</h1>
         <div id="fragencontainer">
             <div id="fragenummer"></div>
             <div id="fragetext"></div>
@@ -18,10 +21,17 @@
                 <button onclick="verarbeiteAntwort('ablehnen')">Ablehnen</button>
             </div>
         </div>
-        <div id="ergebniscontainer" style="display: none;">
-            <h2>Dein Ergebnis</h2>
-            <div id="ergebnistext"></div>
-            <button onclick="location.reload()">Nochmal starten</button>
+
+        <div id="videocontainer" style="display: none; text-align: center;">
+            <h2>Schau dir dieses Video an, bevor du dein Ergebnis siehst: (DAS Video wird noch angepaast)</h2>
+            <video id="introvideo" controls>
+                <source src="medien/hendirk-Wuest-intro.MP4" type="video/mp4">
+                Dein Browser unterstützt das Video-Format nicht.
+
+                ///Users/thorbenbartel/Documents/Programmierung/Webseiten/CDU-Die_richtig_Vereinigungen_fuer_dich/medien/hendirk-Wuest-intro.MP4
+            </video>
+            <br>
+            <button id="weiter-button" onclick="zeigeErgebnisSeite()">Weiter</button>
         </div>
     </div>
     <script src="script.js"></script>
