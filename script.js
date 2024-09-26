@@ -10,6 +10,7 @@ let vereinigungen = [
     { name: "SU", langName: "Senioren-Union (SU)", punkte: 0, website: "https://www.senioren-union.de/mitgliedschaft"},
     { name: "EAK", langName: "Evangelischer Arbeitskreis (EAK)", punkte: 0, website: "https://www.eak-cducsu.de/artikel/mitgliedschaft" },
 
+    
     // Sonderorganisationen
     //TODO RCDS nach weg Miglidschaft!
     { name: "RCDS", langName: "Ring Christlich-Demokratischer Studenten (RCDS)", punkte: 0, website: "https://www.rcds.de/vor-ort/" },
