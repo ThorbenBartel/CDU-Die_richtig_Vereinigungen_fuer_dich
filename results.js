@@ -1,17 +1,16 @@
+// Vereinigungen aus localStorage holen
 let vereinigungen = JSON.parse(localStorage.getItem('vereinigungen'));
 
 // Benutzerdaten aus localStorage holen
-const birthdate = document.getElementById('birthdate').value;
-const postalcode = document.getElementById('postalcode').value;
-const status = document.getElementById('status').value;
-const gender = document.getElementById('gender').value; 
+const status = localStorage.getItem('status');
+const gender = localStorage.getItem('gender');
 
-// Vereinigungen filtern
+// Vereinigungen filtern basierend auf dem Status
 if (status === "Schüler" || status === "Auszubildender") {
     vereinigungen = vereinigungen.filter(vereinigung => vereinigung.name !== "RCDS");
 }
 
-// Hier kannst du auch eine Logik basierend auf dem Geschlecht hinzufügen, falls benötigt
+// Vereinigungen filtern basierend auf dem Geschlecht
 if (gender === "männlich") {
     vereinigungen = vereinigungen.filter(vereinigung => vereinigung.name !== "FU");
 }

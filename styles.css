@@ -9,26 +9,32 @@
     --body-font: 'IBM Plex Serif', serif;
 }
 
+/* Allgemeines Styling */
 body {
     font-family: var(--body-font);
     margin: 0;
     padding: 0;
-    background-color: #2d3c4b;
+    background-color: var(--cdu-blue); /* CDU Design Hintergrundfarbe */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 #app {
     max-width: 800px;
-    margin: auto;
-    padding: 20px;
+    width: 100%;
     background-color: var(--cdu-white);
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 header {
-    text-align: right;
+    text-align: right;  /* Logo rechts ausrichten */
     padding-bottom: 20px;
     border-bottom: 2px solid var(--cdu-turquoise);
+    margin-bottom: 20px;
 }
 
 .logo-container {
@@ -37,25 +43,64 @@ header {
 
 .logo {
     max-width: 150px;
-    margin-top: 10px;
 }
 
+/* Haupttitel */
 h1 {
     font-size: 2.5em;
+    font-family: var(--headline-font);
+    color: var(--cdu-black);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.5em;
     font-family: var(--headline-font);
     color: var(--cdu-black);
     text-align: center;
     margin-bottom: 20px;
 }
 
-h2 {
-    font-size: 2em;
-    font-family: var(--headline-font);
-    color: var(--cdu-black);
-    text-align: center;
-    margin-bottom: 15px;
+/* Formular-Elemente Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
 }
 
+label {
+    font-size: 1.2em;
+    color: var(--cdu-black);
+}
+
+input, select {
+    padding: 10px;
+    font-size: 1.2em;
+    border: 1px solid var(--cdu-blue);
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 15px;
+    background-color: var(--cdu-turquoise);
+    border: none;
+    border-radius: 5px;
+    color: var(--cdu-white);
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: var(--cdu-blue);
+}
+
+/* Styling für das Quiz */
 #fragenummer {
     font-size: 1.2em;
     text-align: center;
@@ -106,78 +151,79 @@ button#weiter-button:hover {
     background-color: var(--cdu-blue);
 }
 
-form {
+/* Video Container */
+#videocontainer video {
+    width: 100%; /* Video nimmt auf mobilen Geräten volle Breite ein */
+    max-width: 600px; /* Begrenzung der Breite für größere Bildschirme */
+    margin: auto; /* Video zentrieren */
+}
+
+/* Ergebnis-Anzeige */
+.ergebnis-item {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-label {
-    font-size: 1.2em;
-    color: var(--cdu-black);
-}
-
-input, select {
-    padding: 10px;
-    font-size: 1.2em;
-    border: 1px solid var(--cdu-blue);
-    border-radius: 5px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-button {
-    padding: 15px;
-    background-color: var(--cdu-turquoise);
-    border: none;
-    border-radius: 5px;
-    color: var(--cdu-white);
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 20px;
-}
-
-button:hover {
-    background-color: var(--cdu-blue);
-}
-
-#result-container {
-    margin-top: 30px;
-}
-
-.result-box {
-    background-color: var(--cdu-white);
-    border: 2px solid var(--cdu-turquoise);
-    border-radius: 5px;
-    padding: 15px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
 }
 
-.result-box h3 {
-    font-family: var(--headline-font);
+.ergebnis-name {
+    font-size: 1.2em;
+    font-weight: bold;
     color: var(--cdu-black);
-    font-size: 1.8em;
     margin-bottom: 10px;
 }
 
-.result-box p {
-    color: var(--cdu-black);
-    font-size: 1.2em;
+.ergebnis-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0;
 }
 
-.result-box a {
-    color: var(--cdu-turquoise);
+.ergebnis-fill {
+    height: 100%;
+    background-color: var(--cdu-turquoise);
+    border-radius: 10px 0 0 10px;
+    transition: width 0.3s;
+}
+
+.ergebnis-prozent {
+    font-size: 1.2em;
     font-weight: bold;
-    text-decoration: none;
-    display: block;
-    margin-top: 10px;
-    font-size: 1.2em;
+    color: var (--cdu-blue);
 }
 
-.result-box a:hover {
+details summary {
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--cdu-black);
+    margin-bottom: 10px;
+}
+
+.details-content {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.details-content p {
+    font-size: 1.2em;
+    color: var(--cdu-black);
+}
+
+.details-content a {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--cdu-turquoise);
+    text-decoration: none;
+}
+
+.details-content a:hover {
     text-decoration: underline;
 }
 
@@ -185,6 +231,10 @@ button:hover {
 @media (max-width: 600px) {
     h1 {
         font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.5em;
     }
 
     input, select, button {
@@ -200,6 +250,26 @@ button:hover {
     }
 
     button#weiter-button {
+        width: 100%;
+    }
+
+    .ergebnis-item {
+        margin-bottom: 15px;
+    }
+
+    .ergebnis-bar {
+        height: 20px;
+    }
+
+    .ergebnis-name {
+        font-size: 1.2em;
+    }
+
+    .ergebnis-prozent {
+        font-size: 1em;
+    }
+
+    #videocontainer video {
         width: 100%;
     }
 }
