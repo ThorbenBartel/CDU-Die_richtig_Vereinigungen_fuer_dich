@@ -2,69 +2,80 @@
     "vereinigungen": [
       {
         "name": "JU",
-        "langName": "Junge Union (JU)",
+        "langName": "Junge Union Deutschlands (JU)",
         "punkte": 0,
-        "website": "https://www.ju-nrw.de/mitmachen"
+        "website": "https://www.ju-nrw.de/mitmachen",
+        "beschreibung": "Die Junge Union Deutschlands ist die Jugendorganisation der CDU und CSU und richtet sich an politisch interessierte junge Menschen bis 35 Jahre."
       },
       {
         "name": "FU",
         "langName": "Frauen-Union (FU)",
         "punkte": 0,
-        "website": "https://www.frauenunion.de/mitglied-werden"
+        "website": "https://www.frauenunion.de/mitglied-werden",
+        "beschreibung": "Die Frauen-Union ist die Vereinigung der Frauen in der CDU und CSU. Sie setzt sich für die Gleichberechtigung von Frauen und Männern ein und vertritt die Interessen von Frauen in der Partei."
       },
       {
         "name": "CDA",
         "langName": "Christlich-Demokratische Arbeitnehmerschaft (CDA)",
         "punkte": 0,
-        "website": "https://www.cda-bund.de/mitmachen"
+        "website": "https://www.cda-bund.de/mitmachen",
+        "beschreibung": "Die Christlich-Demokratische Arbeitnehmerschaft ist die Vereinigung der Arbeitnehmer in der CDU und CSU. Sie setzt sich für die Interessen von Arbeitnehmern ein und vertritt diese in der Partei."
       },
       {
         "name": "KPV",
         "langName": "Kommunalpolitische Vereinigung (KPV)",
         "punkte": 0,
-        "website": "http://kpv.de/mitgliedsantrag/"
+        "website": "http://kpv.de/mitgliedsantrag/",
+        "beschreibung": "Die Kommunalpolitische Vereinigung ist die Vereinigung der kommunalpolitisch engagierten Mitglieder der CDU und CSU. Sie setzt sich für die Interessen der Kommunen und ihrer Bürger ein und vertritt diese in der Partei."
       },
       {
         "name": "MIT",
         "langName": "Mittelstands- und Wirtschaftsvereinigung (MIT)",
         "punkte": 0,
-        "website": "https://www.mit-bund.de/mitgliedschaft"
+        "website": "https://www.mit-bund.de/mitgliedschaft",
+        "beschreibung": "Die Mittelstands- und Wirtschaftsvereinigung ist die Vereinigung der mittelständischen Unternehmer in der CDU und CSU. Sie setzt sich für die Interessen des Mittelstands ein und vertritt diese in der Partei."
       },
       {
         "name": "OMV",
         "langName": "Ost- und Mitteldeutsche Vereinigung (OMV)",
         "punkte": 0,
-        "website": "https://www.omv.cdu.de/ueber-uns/mitglied-werden"
+        "website": "https://www.omv.cdu.de/ueber-uns/mitglied-werden",
+        "beschreibung": "Die Ost- und Mitteldeutsche Vereinigung ist die Vereinigung der Mitglieder der CDU und CSU aus den neuen Bundesländern und Berlin. Sie setzt sich für die Interessen der ost- und mitteldeutschen Länder ein und vertritt diese in der Partei."
       },
       {
         "name": "SU",
         "langName": "Senioren-Union (SU)",
         "punkte": 0,
-        "website": "https://www.senioren-union.de/mitgliedschaft"
+        "website": "https://www.senioren-union.de/mitgliedschaft",
+        "beschreibung": "Die Senioren-Union ist die Vereinigung der älteren Mitglieder der CDU und CSU. Sie setzt sich für die Interessen der Senioren ein und vertritt diese in der Partei."
       },
       {
         "name": "EAK",
         "langName": "Evangelischer Arbeitskreis (EAK)",
         "punkte": 0,
-        "website": "https://www.eak-cducsu.de/artikel/mitgliedschaft"
+        "website": "https://www.eak-cducsu.de/artikel/mitgliedschaft",
+        "beschreibung": "Der Evangelische Arbeitskreis ist die Vereinigung der evangelischen Mitglieder der CDU und CSU. Er setzt sich für die Interessen der evangelischen Christen ein und vertritt diese in der Partei."
       },
       {
         "name": "RCDS",
         "langName": "Ring Christlich-Demokratischer Studenten (RCDS)",
         "punkte": 0,
-        "website": "https://www.rcds.de/vor-ort/"
+        "website": "https://www.rcds.de/vor-ort/",
+        "beschreibung": "Der Ring Christlich-Demokratischer Studenten ist die Vereinigung der christlich-demokratischen Studenten in Deutschland. Er setzt sich für die Interessen der Studenten ein und vertritt diese in der Partei."
       },
       {
         "name": "LSU",
         "langName": "Lesben und Schwule in der Union (LSU)",
         "punkte": 0,
-        "website": "https://www.lsu-deutschlands.de/mach-mit"
+        "website": "https://www.lsu-deutschlands.de/mach-mit",
+        "beschreibung": "Lesben und Schwule in der Union ist die Vereinigung der homosexuellen Mitglieder der CDU und CSU. Sie setzt sich für die Rechte von Lesben und Schwulen ein und vertritt diese in der Partei."
       },
       {
         "name": "SU",
         "langName": "Schüler Union (SU)",
         "punkte": 0,
-        "website": "https://www.schueler-union.de/mitmachen/eintritt"
+        "website": "https://www.schueler-union.de/mitmachen/eintritt",
+        "beschreibung": "Die Schüler Union ist die Vereinigung der Schüler in der CDU und CSU. Sie setzt sich für die Interessen der Schüler ein und vertritt diese in der Partei."
       }
     ]
   }

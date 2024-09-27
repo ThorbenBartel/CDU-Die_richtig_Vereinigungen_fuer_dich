@@ -13,19 +13,19 @@ function zeigeErgebnis() {
 
         ergebnisText += `
             <div class="ergebnis-item">
-                <details>
-                    <summary>
-                        <div class="ergebnis-name">${vereinigung.langName}</div>
-                        <div class="ergebnis-bar">
-                            <div class="ergebnis-fill" style="width: ${prozent}%"></div>
-                        </div>
-                        <div class="ergebnis-prozent">${prozent}%</div>
-                    </summary>
-                    <div class="details-content">
-                        <p>Mehr Informationen über die Vereinigung findest du hier:</p>
-                        <a href="${vereinigung.website}" target="_blank">Mitglied werden</a>
-                    </div>
-                </details>
+            <details>
+                <summary>
+                <div class="ergebnis-name"><strong>${vereinigung.langName}</strong></div>
+                <div class="ergebnis-bar">
+                    <div class="ergebnis-fill" style="width: ${prozent}%"></div>
+                </div>
+                <div class="ergebnis-prozent"><strong>${prozent}%</strong></div>
+                </summary>
+                <div class="details-content">
+                <p><strong>Beschreibung:</strong> ${vereinigung.beschreibung ? vereinigung.beschreibung : 'Keine Beschreibung vorhanden'}</p>
+                <a href="${vereinigung.website}" target="_blank" ><strong>Mitglied werden</strong></a>
+                </div>
+            </details>
             </div>
         `;
     });
