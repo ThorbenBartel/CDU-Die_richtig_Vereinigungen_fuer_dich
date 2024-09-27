@@ -22,7 +22,7 @@ function zeigeErgebnis() {
                     </summary>
                     <div class="details-content">
                         <p>Mehr Informationen über die Vereinigung findest du hier:</p>
-                        <a href="${vereinigung.website}" target="_blank">Mehr erfahren</a>
+                        <a href="${vereinigung.website}" target="_blank">Mitglied werden</a>
                     </div>
                 </details>
             </div>
