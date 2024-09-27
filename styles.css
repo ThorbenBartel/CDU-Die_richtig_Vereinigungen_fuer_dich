@@ -71,7 +71,15 @@ p {
     color: var(--cdu-black);
 }
 
-button {
+/* Buttons für die Antworten */
+#antworten {
+    display: flex;
+    flex-direction: column; /* Buttons untereinander anordnen */
+    gap: 15px; /* Abstand zwischen den Buttons */
+    margin-top: 20px;
+}
+
+#antworten button {
     padding: 15px 30px;
     background-color: var(--cdu-turquoise);
     border: none;
@@ -80,32 +88,44 @@ button {
     font-size: 1.2em;
     cursor: pointer;
     transition: background-color 0.3s;
+    width: 100%; /* Volle Breite auf mobilen Geräten */
 }
 
-button:hover {
+#antworten button:hover {
     background-color: var(--cdu-blue);
 }
 
-@media (max-width: 600px) {
-    .title-container {
-        text-align: center;  /* Text zentrieren auf mobilen Geräten */
-    }
-
-    h1 {
-        font-size: 2em;
-    }
-
-    h2 {
-        font-size: 1.5em;
-    }
-
-    button {
-        width: 100%;
-        font-size: 1em;
-    }
+#antworten button:nth-child(2) {
+    background-color: var(--cdu-gold);
 }
 
-/* Ergebnisanzeige Balken-Styling */
+#antworten button:nth-child(3) {
+    background-color: var(--cdu-blue);
+}
+
+/* Video Container */
+#videocontainer video {
+    width: 100%; /* Ensure video takes up full width on mobile devices */
+    max-width: 600px; /* Limit the width for larger screens */
+    margin: auto; /* Center the video */
+}
+
+#weiter-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: var(--cdu-turquoise);
+    border: none;
+    color: var(--cdu-white);
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+#weiter-button:hover {
+    background-color: var(--cdu-blue);
+}
+
+/* Ergebnis Balken-Styling */
 .ergebnis-item {
     display: flex;
     flex-direction: column;
@@ -170,25 +190,54 @@ details summary {
 
 /* Responsive Anpassungen für mobile Geräte */
 @media (max-width: 600px) {
-    #app {
-        padding: 10px;
+    .title-container {
+        text-align: center;  /* Text zentrieren auf mobilen Geräten */
     }
 
     h1 {
         font-size: 1.8em;
     }
 
-    #fragetext {
-        font-size: 1.2em;
+    h2 {
+        font-size: 1.5em;
+    }
+
+    button {
+        width: 100%;
+        font-size: 1em;
+    }
+
+    #app {
+        padding: 10px;
     }
 
     #antworten {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px; /* Größerer Abstand zwischen den Buttons */
     }
 
     #antworten button {
         font-size: 1em;
+        width: 100%; /* Buttons füllen den gesamten Platz auf mobilen Geräten */
+    }
+
+    .ergebnis-item {
+        margin-bottom: 15px;
+    }
+
+    .ergebnis-bar {
+        height: 20px;
+    }
+
+    .ergebnis-name {
+        font-size: 1.2em;
+    }
+
+    .ergebnis-prozent {
+        font-size: 1em;
+    }
+
+    #videocontainer video {
         width: 100%;
     }
 }
