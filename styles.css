@@ -15,17 +15,13 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--cdu-blue); /* CDU Design Hintergrundfarbe */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
 #app {
-    max-width: 800px;
-    width: 100%;
-    background-color: var(--cdu-white);
+    max-width: 600px;
+    margin: 50px auto; /* Abstand vom oberen Rand */
     padding: 20px;
+    background-color: var(--cdu-white);
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -34,7 +30,6 @@ header {
     text-align: right;  /* Logo rechts ausrichten */
     padding-bottom: 20px;
     border-bottom: 2px solid var(--cdu-turquoise);
-    margin-bottom: 20px;
 }
 
 .logo-container {
@@ -43,31 +38,31 @@ header {
 
 .logo {
     max-width: 150px;
+    margin-top: 10px;
 }
 
-/* Haupttitel */
+h1, h2 {
+    color: var(--cdu-black);
+    text-align: center;
+}
+
 h1 {
     font-size: 2.5em;
     font-family: var(--headline-font);
-    color: var(--cdu-black);
-    text-align: center;
     margin-bottom: 10px;
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-family: var(--headline-font);
-    color: var(--cdu-black);
-    text-align: center;
     margin-bottom: 20px;
 }
 
-/* Formular-Elemente Styling */
+/* Formular Styling */
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-top: 20px;
+    gap: 15px; /* Abstand zwischen Formularfeldern */
 }
 
 label {
@@ -100,7 +95,35 @@ button:hover {
     background-color: var(--cdu-blue);
 }
 
-/* Styling für das Quiz */
+/* Checkbox Styling */
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--cdu-blue);
+    border-radius: 3px;
+    appearance: none;
+    background-color: var(--cdu-white);
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 10px; /* Platz neben dem Text */
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--cdu-turquoise);
+    border-color: var(--cdu-turquoise);
+    position: relative;
+}
+
+input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    left: 3px;
+    top: 1px;
+    font-size: 16px;
+    color: var(--cdu-white);
+}
+
+/* Quiz Styling */
 #fragenummer {
     font-size: 1.2em;
     text-align: center;
@@ -193,7 +216,7 @@ button#weiter-button:hover {
 .ergebnis-prozent {
     font-size: 1.2em;
     font-weight: bold;
-    color: var (--cdu-blue);
+    color: var(--cdu-blue);
 }
 
 details summary {

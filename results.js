@@ -2,18 +2,34 @@
 let vereinigungen = JSON.parse(localStorage.getItem('vereinigungen'));
 
 // Benutzerdaten aus localStorage holen
-const status = localStorage.getItem('status');
 const gender = localStorage.getItem('gender');
+const userStatus = localStorage.getItem('status');
+const evangelisch = localStorage.getItem('evangelisch') === 'true'; // Konvertiere zu boolean
 
-// Vereinigungen filtern basierend auf dem Status
-if (status === "Schüler" || status === "Auszubildender") {
-    vereinigungen = vereinigungen.filter(vereinigung => vereinigung.name !== "RCDS");
-}
 
 // Vereinigungen filtern basierend auf dem Geschlecht
 if (gender === "männlich") {
     vereinigungen = vereinigungen.filter(vereinigung => vereinigung.name !== "FU");
 }
+
+// Vereinigungen filtern basierend auf dem Status
+if (["Schüler", "Auszubildender"].includes(userStatus)) {
+    vereinigungen = vereinigungen.filter(vereinigung => vereinigung.name !== "RCDS");
+}
+
+if (userStatus === "Student") {
+    vereinigungen = vereinigungen.filter(vereinigung => vereinigung.name !== "SU ");
+}
+
+// Filter für Evangelisch
+if (!evangelisch) {
+    // Wenn der Benutzer nicht evangelisch ist, entferne EAK aus den Vereinigungen
+    vereinigungen = vereinigungen.filter(vereinigung => vereinigung.name !== "EAK");
+}
+
+
+// Jetzt kannst du die gefilterten Vereinigungen anzeigen
+zeigeErgebnis();
 
 function zeigeErgebnis() {
     const maxPunkte = vereinigungen.reduce((max, v) => Math.max(max, v.punkte), 0);
