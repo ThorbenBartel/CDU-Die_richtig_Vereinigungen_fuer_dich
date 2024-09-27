@@ -159,10 +159,16 @@ details summary {
     margin-top: 10px;
 }
 
+.details-content p {
+    font-size: 1.2em;
+    color: var(--cdu-black); /* Ensure black text */
+}
+
 .details-content a {
-    color: var(--cdu-turquoise);
+    font-size: 1.2em; /* Matches the text size */
+    font-weight: bold; /* Ensure the link is bold */
+    color: var(--cdu-turquoise); /* CDU turquoise color for links */
     text-decoration: none;
-    font-weight: bold;
 }
 
 .details-content a:hover {
