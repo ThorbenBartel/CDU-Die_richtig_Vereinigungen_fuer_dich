@@ -79,9 +79,10 @@ p {
     margin-top: 20px;
 }
 
-#antworten button {
+#antworten button,
+#weiter-button {
     padding: 15px 30px;
-    background-color: var(--cdu-turquoise);
+    background-color: var(--cdu-turquoise) !important;
     border: none;
     border-radius: 5px;
     color: var(--cdu-white);
@@ -91,16 +92,9 @@ p {
     width: 100%; /* Volle Breite auf mobilen Geräten */
 }
 
-#antworten button:hover {
-    background-color: var(--cdu-blue);
-}
-
-#antworten button:nth-child(2) {
-    background-color: var(--cdu-gold);
-}
-
-#antworten button:nth-child(3) {
-    background-color: var(--cdu-blue);
+#antworten button:hover,
+#weiter-button:hover {
+    background-color: var(--cdu-blue) !important;
 }
 
 /* Video Container */
@@ -108,21 +102,6 @@ p {
     width: 100%; /* Ensure video takes up full width on mobile devices */
     max-width: 600px; /* Limit the width for larger screens */
     margin: auto; /* Center the video */
-}
-
-#weiter-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: var(--cdu-turquoise);
-    border: none;
-    color: var(--cdu-white);
-    border-radius: 5px;
-    font-size: 1.2em;
-    cursor: pointer;
-}
-
-#weiter-button:hover {
-    background-color: var(--cdu-blue);
 }
 
 /* Ergebnis Balken-Styling */
