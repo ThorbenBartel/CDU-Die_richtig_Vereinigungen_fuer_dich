@@ -80,7 +80,8 @@ p {
 }
 
 #antworten button,
-#weiter-button {
+#weiter-button,
+#start-button {
     padding: 15px 30px;
     background-color: var(--cdu-turquoise) !important;
     border: none;
@@ -93,7 +94,8 @@ p {
 }
 
 #antworten button:hover,
-#weiter-button:hover {
+#weiter-button:hover,
+#start-button:hover {
     background-color: var(--cdu-blue) !important;
 }
 
@@ -139,7 +141,7 @@ p {
 .ergebnis-prozent {
     font-size: 1.2em;
     font-weight: bold;
-    color: var(--cdu-blue);
+    color: var (--cdu-blue);
 }
 
 details summary {
