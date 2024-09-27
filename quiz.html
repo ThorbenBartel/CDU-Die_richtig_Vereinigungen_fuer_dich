@@ -8,27 +8,28 @@
 </head>
 <body>
     <div id="app">
-        <div class="logo-container">
-            <img src="CDU-Gesamtlogo_transparent_RGB.png" alt="CDU Logo" class="logo">
-        </div>
-        <h1>Welche Union passt zu dir?</h1>
-        <div id="fragencontainer">
-            <div id="fragenummer"></div>
-            <div id="fragetext"></div>
-            <div id="antworten">
-                <button onclick="verarbeiteAntwort('zustimmen')">Zustimmen</button>
-                <button onclick="verarbeiteAntwort('neutral')">Neutral</button>
-                <button onclick="verarbeiteAntwort('ablehnen')">Ablehnen</button>
+        <header>
+            <div class="logo-container">
+                <img src="medien/CDU-Gesamtlogo_transparent_RGB.png" alt="CDU Logo" class="logo">
             </div>
-        </div>
-
+        </header>
+        <main>
+            <h1>Welche Union passt zu dir?</h1>
+            <div id="fragencontainer">
+                <p id="fragenummer">Frage <span id="current-question-number"></span> von <span id="total-questions"></span></p>
+                <h2 id="fragetext"></h2>
+                <div id="antworten">
+                    <button onclick="verarbeiteAntwort('zustimmen')">Zustimmen</button>
+                    <button onclick="verarbeiteAntwort('neutral')">Neutral</button>
+                    <button onclick="verarbeiteAntwort('ablehnen')">Ablehnen</button>
+                </div>
+            </div>
+        </main>
         <div id="videocontainer" style="display: none; text-align: center;">
-            <h2>Schau dir dieses Video an, bevor du dein Ergebnis siehst: (DAS Video wird noch angepaast)</h2>
+            <h2>Schau dir dieses Video an, bevor du dein Ergebnis siehst: (Das video wird noch geändert)</h2>
             <video id="introvideo" controls>
                 <source src="medien/hendirk-Wuest-intro.MP4" type="video/mp4">
                 Dein Browser unterstützt das Video-Format nicht.
-
-                ///Users/thorbenbartel/Documents/Programmierung/Webseiten/CDU-Die_richtig_Vereinigungen_fuer_dich/medien/hendirk-Wuest-intro.MP4
             </video>
             <br>
             <button id="weiter-button" onclick="zeigeErgebnisSeite()">Weiter</button>

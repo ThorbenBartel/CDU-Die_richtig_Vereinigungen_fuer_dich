@@ -14,7 +14,7 @@ function zeigeErgebnis() {
             <div class="ergebnis-item">
                 <details>
                     <summary>
-                        <div class="ergebnis-name">${vereinigung.langName} <span class="menu-word">Menü</span></div>
+                        <div class="ergebnis-name">${vereinigung.langName}</div>
                         <div class="ergebnis-bar">
                             <div class="ergebnis-fill" style="width: ${prozent}%"></div>
                         </div>
