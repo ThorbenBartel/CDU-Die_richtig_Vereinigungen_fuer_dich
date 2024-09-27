@@ -6,6 +6,7 @@ document.getElementById('infoForm').addEventListener('submit', function (event) 
     const status = document.getElementById('status').value;
     const gender = document.getElementById('gender').value;
     const evangelisch = document.getElementById('evangelisch').checked;  // Evangelisch Checkbox
+    const lsbitq = document.getElementById('lsbitq').checked;  // LSBTIQ Checkbox
 
     // Daten in localStorage speichern
     localStorage.setItem('birthdate', birthdate);
@@ -13,6 +14,7 @@ document.getElementById('infoForm').addEventListener('submit', function (event) 
     localStorage.setItem('status', status);
     localStorage.setItem('gender', gender);
     localStorage.setItem('evangelisch', evangelisch);  // Evangelisch speichern (true/false)
+    localStorage.setItem('lsbitq', lsbitq);  // LSBTIQ speichern (true/false)
 
     // Weiterleitung zum Quiz
     window.location.href = 'quiz.html';

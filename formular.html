@@ -22,12 +22,6 @@
                 <option value="weiblich">Weiblich</option>
             </select>
 
-            <label for="birthdate">Geburtsdatum:</label>
-            <input type="date" id="birthdate" name="birthdate" required>
-
-            <label for="postalcode">Postleitzahl:</label>
-            <input type="text" id="postalcode" name="postalcode" pattern="[0-9]{5}" required>
-
             <label for="status">Status:</label>
             <select id="status" name="status">
                 <option value="Schüler">Schüler</option>
@@ -38,8 +32,18 @@
                 <option value="Sonstiges">Sonstiges</option>
             </select>
 
+            <label for="birthdate">Geburtsdatum:</label>
+            <input type="date" id="birthdate" name="birthdate" required>
+
+
+            <label for="lsbitq">LSBTIQ:</label>
+            <input type="checkbox" id="lsbitq" name="lsbitq">
+
             <label for="evangelisch">Evangelisch:</label>
             <input type="checkbox" id="evangelisch" name="evangelisch">
+
+            <label for="postalcode">Postleitzahl:</label>
+            <input type="text" id="postalcode" name="postalcode" pattern="[0-9]{5}" required>
 
             <button type="submit">Weiter</button>
         </form>

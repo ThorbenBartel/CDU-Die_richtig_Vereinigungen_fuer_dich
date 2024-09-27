@@ -3,8 +3,25 @@ let vereinigungen = JSON.parse(localStorage.getItem('vereinigungen'));
 
 // Benutzerdaten aus localStorage holen
 const gender = localStorage.getItem('gender');
+const birthdate = localStorage.getItem('birthdate');
 const userStatus = localStorage.getItem('status');
 const evangelisch = localStorage.getItem('evangelisch') === 'true'; // Konvertiere zu boolean
+const lsbitq = localStorage.getItem('lsbitq') === 'true'; // Konvertiere zu boolean
+
+// Funktion zur Berechnung des Alters
+function berechneAlter(geburtsdatum) {
+    const heute = new Date();
+    const geburtstag = new Date(geburtsdatum);
+    let alter = heute.getFullYear() - geburtstag.getFullYear();
+    const monat = heute.getMonth() - geburtstag.getMonth();
+    if (monat < 0 || (monat === 0 && heute.getDate() < geburtstag.getDate())) {
+        alter--;
+    }
+    return alter;
+}
+
+// Alter des Benutzers berechnen
+const alter = berechneAlter(birthdate);
 
 
 // Vereinigungen filtern basierend auf dem Geschlecht
@@ -21,10 +38,20 @@ if (userStatus === "Student") {
     vereinigungen = vereinigungen.filter(vereinigung => vereinigung.name !== "SU ");
 }
 
+
+
+
+
 // Filter für Evangelisch
 if (!evangelisch) {
     // Wenn der Benutzer nicht evangelisch ist, entferne EAK aus den Vereinigungen
     vereinigungen = vereinigungen.filter(vereinigung => vereinigung.name !== "EAK");
+}
+
+// Filter für LSBTIQ
+if (!lsbitq) {
+    // Wenn der Benutzer nicht LSBTIQ ist, entferne LSVD aus den Vereinigungen
+    vereinigungen = vereinigungen.filter(vereinigung => vereinigung.name !== "LSU");
 }
 
 
