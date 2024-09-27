@@ -1,25 +1,13 @@
-// Vereinigungen und Sonderorganisationen mit Abkürzungen
-let vereinigungen = [
-    // Vereinigungen
-    { name: "JU", langName: "Junge Union (JU)", punkte: 0, website: "https://www.ju-nrw.de/mitmachen" },
-    { name: "FU", langName: "Frauen-Union (FU)", punkte: 0, website: "https://www.frauenunion.de/mitglied-werden" },
-    { name: "CDA", langName: "Christlich-Demokratische Arbeitnehmerschaft (CDA)", punkte: 0, website: "https://www.cda-bund.de/mitmachen" },
-    { name: "KPV", langName: "Kommunalpolitische Vereinigung (KPV)", punkte: 0, website: "http://kpv.de/mitgliedsantrag/" },
-    { name: "MIT", langName: "Mittelstands- und Wirtschaftsvereinigung (MIT)", punkte: 0, website: "https://www.mit-bund.de/mitgliedschaft" },
-    { name: "OMV", langName: "Ost- und Mitteldeutsche Vereinigung (OMV)", punkte: 0, website: "https://www.omv.cdu.de/ueber-uns/mitglied-werden" },
-    { name: "SU", langName: "Senioren-Union (SU)", punkte: 0, website: "https://www.senioren-union.de/mitgliedschaft"},
-    { name: "EAK", langName: "Evangelischer Arbeitskreis (EAK)", punkte: 0, website: "https://www.eak-cducsu.de/artikel/mitgliedschaft" },
+// JSON-Fragen laden
+let vereinigungen = [];
+fetch('vereinigungen.json')
+    .then(response => response.json())
+    .then(data => {
+        vereinigungen = data.vereinigungen;
+    })
+    .catch(error => console.error('Fehler beim Laden der Vereinigungen:', error));
 
-    
-    // Sonderorganisationen
-    //TODO RCDS nach weg Miglidschaft!
-    { name: "RCDS", langName: "Ring Christlich-Demokratischer Studenten (RCDS)", punkte: 0, website: "https://www.rcds.de/vor-ort/" },
-    { name: "LSU", langName: "Lesben und Schwule in der Union (LSU)", punkte: 0, website: "https://www.lsu-deutschlands.de/mach-mit" },
-
-    // Arebitsgruppem
-    { name: "SU", langName: "Schüler Union (SU)", punkte: 0, website: "https://www.schueler-union.de/mitmachen/eintritt" },
-];
-
+// Fragen laden
 let aktuelleFragen = [];
 let aktuelleFrageIndex = 0;
 

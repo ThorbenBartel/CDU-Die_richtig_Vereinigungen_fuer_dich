@@ -1,14 +1,15 @@
-let vereinigungen = JSON.parse(localStorage.getItem('vereinigungen')) || [];
+let vereinigungen = JSON.parse(localStorage.getItem('vereinigungen'));
 
 function zeigeErgebnis() {
     const maxPunkte = vereinigungen.reduce((max, v) => Math.max(max, v.punkte), 0);
 
+    // Sortiere Vereinigungen nach Punktzahl, absteigend
     vereinigungen.sort((a, b) => b.punkte - a.punkte);
 
     let ergebnisText = "Die Vereinigung(en), die am besten zu dir passen:<br><br>";
 
-    vereinigungen.forEach((vereinigung, index) => {
-        const prozent = (vereinigung.punkte / maxPunkte * 100).toFixed(1);
+    vereinigungen.forEach((vereinigung) => {
+        const prozent = ((vereinigung.punkte / maxPunkte) * 100).toFixed(1);
 
         ergebnisText += `
             <div class="ergebnis-item">
