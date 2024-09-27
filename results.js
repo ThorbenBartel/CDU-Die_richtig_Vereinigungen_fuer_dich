@@ -1,5 +1,21 @@
 let vereinigungen = JSON.parse(localStorage.getItem('vereinigungen'));
 
+// Benutzerdaten aus localStorage holen
+const birthdate = document.getElementById('birthdate').value;
+const postalcode = document.getElementById('postalcode').value;
+const status = document.getElementById('status').value;
+const gender = document.getElementById('gender').value; 
+
+// Vereinigungen filtern
+if (status === "Schüler" || status === "Auszubildender") {
+    vereinigungen = vereinigungen.filter(vereinigung => vereinigung.name !== "RCDS");
+}
+
+// Hier kannst du auch eine Logik basierend auf dem Geschlecht hinzufügen, falls benötigt
+if (gender === "männlich") {
+    vereinigungen = vereinigungen.filter(vereinigung => vereinigung.name !== "FU");
+}
+
 function zeigeErgebnis() {
     const maxPunkte = vereinigungen.reduce((max, v) => Math.max(max, v.punkte), 0);
 

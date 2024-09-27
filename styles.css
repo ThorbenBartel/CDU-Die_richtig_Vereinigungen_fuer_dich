@@ -13,7 +13,7 @@ body {
     font-family: var(--body-font);
     margin: 0;
     padding: 0;
-    background-color: #2d3c4b; /* Wahl-O-Mat Stil */
+    background-color: #2d3c4b;
 }
 
 #app {
@@ -26,13 +26,13 @@ body {
 }
 
 header {
-    text-align: right;  /* Logo rechts ausrichten */
+    text-align: right;
     padding-bottom: 20px;
     border-bottom: 2px solid var(--cdu-turquoise);
 }
 
 .logo-container {
-    text-align: right;  /* Logo rechtsbündig */
+    text-align: right;
 }
 
 .logo {
@@ -40,157 +40,154 @@ header {
     margin-top: 10px;
 }
 
-.title-container {
-    text-align: center;  /* Text zentrieren */
-    margin-top: 20px;    /* Abstand vom Logo */
-}
-
-h1, h2 {
-    color: var(--cdu-black);
-}
-
 h1 {
     font-size: 2.5em;
     font-family: var(--headline-font);
-    margin-bottom: 10px;
+    color: var(--cdu-black);
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 h2 {
-    font-size: 1.8em;
+    font-size: 2em;
     font-family: var(--headline-font);
-    color: var(--cdu-blue);
-}
-
-main {
-    margin-top: 20px;
+    color: var(--cdu-black);
     text-align: center;
+    margin-bottom: 15px;
 }
 
-p {
+#fragenummer {
+    font-size: 1.2em;
+    text-align: center;
+    color: var(--cdu-black);
+    margin-bottom: 10px;
+}
+
+#fragetext {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--cdu-black);
+}
+
+#antworten button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--cdu-turquoise);
+    color: var(--cdu-white);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#antworten button:hover {
+    background-color: var(--cdu-blue);
+}
+
+button#weiter-button {
+    padding: 10px 20px;
+    background-color: var(--cdu-turquoise);
+    color: var(--cdu-white);
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button#weiter-button:hover {
+    background-color: var(--cdu-blue);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+label {
     font-size: 1.2em;
     color: var(--cdu-black);
 }
 
-/* Buttons für die Antworten */
-#antworten {
-    display: flex;
-    flex-direction: column; /* Buttons untereinander anordnen */
-    gap: 15px; /* Abstand zwischen den Buttons */
-    margin-top: 20px;
+input, select {
+    padding: 10px;
+    font-size: 1.2em;
+    border: 1px solid var(--cdu-blue);
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-#antworten button,
-#weiter-button,
-#start-button {
-    padding: 15px 30px;
-    background-color: var(--cdu-turquoise) !important;
+button {
+    padding: 15px;
+    background-color: var(--cdu-turquoise);
     border: none;
     border-radius: 5px;
     color: var(--cdu-white);
     font-size: 1.2em;
     cursor: pointer;
     transition: background-color 0.3s;
-    width: 100%; /* Volle Breite auf mobilen Geräten */
+    margin-top: 20px;
 }
 
-#antworten button:hover,
-#weiter-button:hover,
-#start-button:hover {
-    background-color: var(--cdu-blue) !important;
+button:hover {
+    background-color: var(--cdu-blue);
 }
 
-/* Video Container */
-#videocontainer video {
-    width: 100%; /* Ensure video takes up full width on mobile devices */
-    max-width: 600px; /* Limit the width for larger screens */
-    margin: auto; /* Center the video */
+#result-container {
+    margin-top: 30px;
 }
 
-/* Ergebnis Balken-Styling */
-.ergebnis-item {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
-}
-
-.ergebnis-name {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: var(--cdu-black);
-    margin-bottom: 10px;
-}
-
-.ergebnis-bar {
-    width: 100%;
-    height: 20px;
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 10px 0;
-}
-
-.ergebnis-fill {
-    height: 100%;
-    background-color: var(--cdu-turquoise);
-    border-radius: 10px 0 0 10px;
-    transition: width 0.3s;
-}
-
-.ergebnis-prozent {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: var (--cdu-blue);
-}
-
-details summary {
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: bold;
-    color: var(--cdu-black);
-    margin-bottom: 10px;
-}
-
-.details-content {
-    padding: 10px;
-    background-color: #f9f9f9;
+.result-box {
+    background-color: var(--cdu-white);
+    border: 2px solid var(--cdu-turquoise);
     border-radius: 5px;
-    margin-top: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.details-content p {
+.result-box h3 {
+    font-family: var(--headline-font);
+    color: var(--cdu-black);
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.result-box p {
+    color: var(--cdu-black);
     font-size: 1.2em;
-    color: var(--cdu-black); /* Ensure black text */
 }
 
-.details-content a {
-    font-size: 1.2em; /* Matches the text size */
-    font-weight: bold; /* Ensure the link is bold */
-    color: var(--cdu-turquoise); /* CDU turquoise color for links */
+.result-box a {
+    color: var(--cdu-turquoise);
+    font-weight: bold;
     text-decoration: none;
+    display: block;
+    margin-top: 10px;
+    font-size: 1.2em;
 }
 
-.details-content a:hover {
+.result-box a:hover {
     text-decoration: underline;
 }
 
 /* Responsive Anpassungen für mobile Geräte */
 @media (max-width: 600px) {
-    .title-container {
-        text-align: center;  /* Text zentrieren auf mobilen Geräten */
-    }
-
     h1 {
         font-size: 1.8em;
     }
 
-    h2 {
-        font-size: 1.5em;
-    }
-
-    button {
-        width: 100%;
+    input, select, button {
         font-size: 1em;
     }
 
@@ -198,33 +195,11 @@ details summary {
         padding: 10px;
     }
 
-    #antworten {
-        flex-direction: column;
-        gap: 15px; /* Größerer Abstand zwischen den Buttons */
-    }
-
     #antworten button {
         font-size: 1em;
-        width: 100%; /* Buttons füllen den gesamten Platz auf mobilen Geräten */
     }
 
-    .ergebnis-item {
-        margin-bottom: 15px;
-    }
-
-    .ergebnis-bar {
-        height: 20px;
-    }
-
-    .ergebnis-name {
-        font-size: 1.2em;
-    }
-
-    .ergebnis-prozent {
-        font-size: 1em;
-    }
-
-    #videocontainer video {
+    button#weiter-button {
         width: 100%;
     }
 }
