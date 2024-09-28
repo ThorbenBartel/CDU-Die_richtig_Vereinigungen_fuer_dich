@@ -65,10 +65,8 @@
         }
 
         // Filter für Evangelisch
-        if (vereinigung.name === 'EAK') {
-            if (!evangelisch) {
-                include = false;
-            }
+        if (vereinigung.name === 'EAK' && !evangelisch) {
+            include = false;
         }
 
         // Filter für LSBTQ
