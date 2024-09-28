@@ -31,57 +31,60 @@
         alter = null;
     }
 
-    // Filterung der Vereinigungen basierend auf den Benutzerdaten
-    vereinigungen = vereinigungen.filter(vereinigung => {
-        let include = true;
+    // **Neuer Filter für Benutzer unter 12 Jahren**
+    if (alter !== null && alter < 12) {
+        vereinigungen = []; // Alle Vereinigungen entfernen
+    } else {
+        // Filterung der Vereinigungen basierend auf den Benutzerdaten
+        vereinigungen = vereinigungen.filter(vereinigung => {
+            let include = true;
 
-        // Geschlechtsbasierte Filterung
-        if (gender === 'männlich' && vereinigung.name === 'Frauen Union') {
-            include = false;
-        }
-
-        // Statusbasierte Filterung
-        if ((userStatus === 'Schüler' || userStatus === 'Auszubildender') && vereinigung.name === 'RCDS') {
-            include = false;
-        }
-        if (userStatus === 'Student' && vereinigung.name === 'SU ') {
-            include = false;
-        }
-
-        // Altersbasierte Filterung
-        if (alter !== null) {
-            if (vereinigung.name === 'Schüler Union' && !(alter >= 12 && alter <= 24)) {
+            // Geschlechtsbasierte Filterung
+            if (gender === 'männlich' && vereinigung.name === 'Frauen Union') {
                 include = false;
             }
-            if ((vereinigung.name === 'JU' || vereinigung.name === 'RCDS') && !(alter >= 16 && alter <= 35)) {
+
+            // Statusbasierte Filterung
+            const statusesToExcludeRCDS = ['Schüler', 'Auszubildender'];
+            if (statusesToExcludeRCDS.includes(userStatus) && vereinigung.name === 'RCDS') {
                 include = false;
             }
-            if ((vereinigung.name === 'CDA' || vereinigung.name === 'KPV' || vereinigung.name === 'MIT' || vereinigung.name === 'OMV') && alter < 18) {
+
+            // Altersbasierte Filterung
+            if (alter !== null) {
+                if (vereinigung.name === 'SU ' && !(alter >= 12 && alter <= 24)) {
+                    include = false;
+                }
+                if ((vereinigung.name === 'JU' || vereinigung.name === 'RCDS') && !(alter >= 16 && alter <= 35)) {
+                    include = false;
+                }
+                if (vereinigung.name === 'SU' && alter < 60) {
+                    include = false;
+                }
+                // Bedingung für CDA, KPV, MIT, OMV
+                if ((vereinigung.name === 'CDA' || vereinigung.name === 'KPV' || vereinigung.name === 'MIT' || vereinigung.name === 'OMV' || vereinigung.name === 'SU') && alter < 18) {
+                    include = false;
+                }
+            }
+
+            // Filter für Evangelisch
+            if (vereinigung.name === 'EAK' && !evangelisch) {
                 include = false;
             }
-            if (vereinigung.name === 'Senioren-Union' && alter < 60) {
+
+            // Filter für LSBTQ
+            if (vereinigung.name === 'LSU' && !lsbtq) {
                 include = false;
             }
-        }
 
-        // Filter für Evangelisch
-        if (vereinigung.name === 'EAK' && !evangelisch) {
-            include = false;
-        }
+            return include;
+        });
+    }
 
-        // Filter für LSBTQ
-        if (vereinigung.name === 'LSU' && !lsbtq) {
-            include = false;
-        }
-
-        return include;
-    });
-
-    console.log('Vereinigungen nach Filterung:', vereinigungen);
 
     // Überprüfen, ob noch Vereinigungen vorhanden sind
     if (vereinigungen.length === 0) {
-        document.getElementById('ergebnistext').innerHTML = "Es wurden keine passenden Vereinigungen gefunden.";
+        document.getElementById('ergebnistext').innerHTML = "Es wurden keine passenden Vereinigungen gefunden oder sie sind noch zu jung für die Union.";
         return;
     }
 
