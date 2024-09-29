@@ -8,6 +8,7 @@
     const userStatus = localStorage.getItem('status');
     const evangelisch = localStorage.getItem('evangelisch') === 'true'; // Konvertiere zu boolean
     const lsbtq = localStorage.getItem('lsbtq') === 'true'; // Konvertiere zu boolean
+    const postalcode = localStorage.getItem('postalcode');
 
     // Funktion zur Berechnung des Alters
     function berechneAlter(geburtsdatum) {
@@ -88,10 +89,30 @@
         return;
     }
 
-    // Jetzt kannst du die gefilterten Vereinigungen anzeigen
-    zeigeErgebnis();
+    // **PLZ zu Stadt zuordnen**
+    fetch('plz_nrw.json')
+        .then(response => response.json())
+        .then(plzData => {
+            const stadt = plzData[postalcode];
 
-    function zeigeErgebnis() {
+            if (stadt) {
+                console.log(`Die Stadt zur Postleitzahl ${postalcode} ist ${stadt}`);
+                
+                // **Veranstaltungen laden**
+                fetch('veranstaltungen.json')
+                    .then(response => response.json())
+                    .then(veranstaltungenData => {
+                        zeigeErgebnis(vereinigungen, stadt, veranstaltungenData);
+                    })
+                    .catch(error => console.error('Fehler beim Laden der Veranstaltungsdaten:', error));
+            } else {
+                console.log('Keine Stadt zur Postleitzahl gefunden.');
+            }
+        })
+        .catch(error => console.error('Fehler beim Laden der PLZ-Daten:', error));
+
+    // Ergebnisse und Veranstaltungen anzeigen
+    function zeigeErgebnis(vereinigungen, stadt, veranstaltungen) {
         const maxPunkte = vereinigungen.reduce((max, v) => Math.max(max, v.punkte), 0);
 
         // Sortiere Vereinigungen nach Punktzahl, absteigend
@@ -115,13 +136,30 @@
                     <div class="details-content">
                     <p><strong>Beschreibung:</strong> ${vereinigung.beschreibung ? vereinigung.beschreibung : 'Keine Beschreibung vorhanden'}</p>
                     <a href="${vereinigung.website}" target="_blank" ><strong>Mitglied werden</strong></a>
+            `;
+
+            // Füge Veranstaltung hinzu, wenn vorhanden
+            const vereinigungVeranstaltungen = veranstaltungen[stadt]?.[vereinigung.name] || [];
+            if (vereinigungVeranstaltungen.length > 0) {
+                vereinigungVeranstaltungen.forEach(v => {
+                    ergebnisText += `
+                        <div class="veranstaltung">
+                            <h4>${v.name}</h4>
+                            <p><strong>Adresse:</strong> ${v.adresse}</p>
+                            <p><strong>Beschreibung:</strong> ${v.beschreibung}</p>
+                            <p><strong>Anmeldung:</strong> <a href="${v.link}" target="_blank">Hier anmelden</a></p>
+                            <p><strong>Hotline:</strong> ${v.hotline}</p>
+                        </div>
+                    `;
+                });
+            }
+
+            ergebnisText += `
                     </div>
                 </details>
                 </div>
             `;
         });
-
-        console.log('Angezeigte Vereinigungen:', vereinigungen);
 
         document.getElementById('ergebnistext').innerHTML = ergebnisText;
     }

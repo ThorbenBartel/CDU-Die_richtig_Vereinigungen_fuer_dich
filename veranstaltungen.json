@@ -1,0 +1,49 @@
+{
+    "Köln": {
+      "CDA": [
+        {
+          "name": "CDU Treffen Köln",
+          "adresse": "Rathausplatz 1, 50667 Köln",
+          "beschreibung": "Jahrestreffen der CDU Köln.",
+          "link": "https://cdu-koeln.de/anmeldung",
+          "hotline": "0221-123456"
+        },
+        {
+          "name": "CDU Sommerfest Köln",
+          "adresse": "Kölner Domplatz, 50667 Köln",
+          "beschreibung": "Sommerfest der CDU Köln.",
+          "link": "https://cdu-koeln.de/sommerfest",
+          "hotline": "0221-654321"
+        }
+      ],
+      "JU": [
+        {
+          "name": "JU Köln Treffen",
+          "adresse": "Jungplatz 1, 50667 Köln",
+          "beschreibung": "Treffen der Jungen Union Köln.",
+          "link": "https://ju-koeln.de/anmeldung",
+          "hotline": "0221-987654"
+        }
+      ]
+    },
+    "Dortmund": {
+      "JU": [
+        {
+          "name": "JU Treffen Dortmund",
+          "adresse": "Friedensplatz 1, 44135 Dortmund",
+          "beschreibung": "Treffen der Jungen Union Dortmund.",
+          "link": "https://ju-dortmund.de/anmeldung",
+          "hotline": "0231-987654"
+        }
+      ],
+      "MIT": [
+        {
+          "name": "CDU Dortmund Sitzung",
+          "adresse": "Stadthausplatz 1, 44135 Dortmund",
+          "beschreibung": "Monatliche Sitzung der CDU Dortmund.",
+          "link": "https://cdu-dortmund.de/anmeldung",
+          "hotline": "0231-654321"
+        }
+      ]
+    }
+  }
