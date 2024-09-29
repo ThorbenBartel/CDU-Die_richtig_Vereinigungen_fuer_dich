@@ -58,6 +58,42 @@ h2 {
     margin-bottom: 20px;
 }
 
+/* Neuer Abschnitt für Erklärungstext */
+.description-text {
+    font-size: 1.2em;
+    color: var(--cdu-black);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Textarea Anpassung */
+textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    border: 1px solid var(--cdu-blue);
+    border-radius: 5px;
+}
+
+/* Button Anpassung über die gesamte Breite */
+.full-width-button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--cdu-turquoise);
+    border: none;
+    border-radius: 5px;
+    color: var(--cdu-white);
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.full-width-button:hover {
+    background-color: var(--cdu-blue);
+}
+
 /* Formular Styling */
 form {
     display: flex;

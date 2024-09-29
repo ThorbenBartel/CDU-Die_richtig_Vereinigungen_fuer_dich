@@ -63,19 +63,9 @@
                     include = false;
                 }
                 // Bedingung für CDA, KPV, MIT, OMV
-                if ((vereinigung.name === 'CDA' || vereinigung.name === 'KPV' || vereinigung.name === 'MIT' || vereinigung.name === 'OMV' || vereinigung.name === 'SU') && alter < 18) {
+                if ((vereinigung.name === 'CDA' || vereinigung.name === 'KPV' || vereinigung.name === 'MIT' || vereinigung.name === 'OMV' || vereinigung.name === 'SU' || vereinigung.name === 'EKA' || vereinigung.name === 'LSU') && alter < 18) {
                     include = false;
                 }
-            }
-
-            // Filter für Evangelisch
-            if (vereinigung.name === 'EAK' && !evangelisch) {
-                include = false;
-            }
-
-            // Filter für LSBTQ
-            if (vereinigung.name === 'LSU' && !lsbtq) {
-                include = false;
             }
 
             return include;
@@ -145,8 +135,9 @@
                     ergebnisText += `
                         <div class="veranstaltung">
                             <h4>${v.name}</h4>
-                            <p><strong>Adresse:</strong> ${v.adresse}</p>
                             <p><strong>Beschreibung:</strong> ${v.beschreibung}</p>
+                            <p><strong>Datum:</strong> ${v.datum} um ${v.uhrzeit}</p>
+                            <p><strong>Adresse:</strong> ${v.adresse}</p>
                             <p><strong>Anmeldung:</strong> <a href="${v.link}" target="_blank">Hier anmelden</a></p>
                             <p><strong>Hotline:</strong> ${v.hotline}</p>
                         </div>
