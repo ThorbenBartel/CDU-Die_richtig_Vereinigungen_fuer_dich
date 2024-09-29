@@ -127,10 +127,16 @@
                     <p><strong>Beschreibung:</strong> ${vereinigung.beschreibung ? vereinigung.beschreibung : 'Keine Beschreibung vorhanden'}</p>
                     <a href="${vereinigung.website}" target="_blank" ><strong>Mitglied werden</strong></a>
             `;
-
-            // Füge Veranstaltung hinzu, wenn vorhanden
+            
+            // Füge Hinweis und Veranstaltungen hinzu, wenn vorhanden
             const vereinigungVeranstaltungen = veranstaltungen[stadt]?.[vereinigung.name] || [];
             if (vereinigungVeranstaltungen.length > 0) {
+                ergebnisText += `
+                    <div class="veranstaltung-hinweis">
+                        <h3>Veranstaltungen</h3>
+                    </div>
+                `;
+
                 vereinigungVeranstaltungen.forEach(v => {
                     ergebnisText += `
                         <div class="veranstaltung">
@@ -141,9 +147,10 @@
                             <p><strong>Anmeldung:</strong> <a href="${v.link}" target="_blank">Hier anmelden</a></p>
                             <p><strong>Hotline:</strong> ${v.hotline}</p>
                         </div>
-                    `;
+                  `;
                 });
             }
+            
 
             ergebnisText += `
                     </div>

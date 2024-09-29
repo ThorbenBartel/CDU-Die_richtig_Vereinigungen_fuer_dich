@@ -217,7 +217,7 @@ button#weiter-button:hover {
     margin: auto; /* Video zentrieren */
 }
 
-/* Ergebnis-Anzeige */
+/* Ergebnis Styling */
 .ergebnis-item {
     display: flex;
     flex-direction: column;
@@ -255,14 +255,6 @@ button#weiter-button:hover {
     color: var(--cdu-blue);
 }
 
-details summary {
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: bold;
-    color: var(--cdu-black);
-    margin-bottom: 10px;
-}
-
 .details-content {
     padding: 10px;
     background-color: #f9f9f9;
@@ -284,6 +276,40 @@ details summary {
 
 .details-content a:hover {
     text-decoration: underline;
+}
+
+/* Veranstaltung Styling */
+.veranstaltung {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+}
+
+/* Hinweis "Veranstaltungen" */
+.veranstaltung-hinweis {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: var(--cdu-gold); /* Orangefarbener Hintergrund */
+    border-radius: 5px;
+    text-align: center;
+    color: var(--cdu-white); /* Ändert die Textfarbe in Weiß */
+}
+
+.veranstaltung-hinweis h3 {
+    font-size: 1.5em;
+    color: var(--cdu-white); /* Weißer Text */
+    margin: 0;
+}
+
+.veranstaltung h4 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.veranstaltung p {
+    font-size: 1.1em;
+    margin-bottom: 5px;
 }
 
 /* Checkbox Styling */
