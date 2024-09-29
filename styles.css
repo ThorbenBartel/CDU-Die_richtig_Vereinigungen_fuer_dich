@@ -286,6 +286,34 @@ details summary {
     text-decoration: underline;
 }
 
+/* Checkbox Styling */
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--cdu-blue);
+    border-radius: 3px;
+    appearance: none;
+    background-color: var(--cdu-white);
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 10px; /* Platz neben dem Text */
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--cdu-turquoise);
+    border-color: var(--cdu-turquoise);
+    position: relative;
+}
+
+input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    left: 3px;
+    top: 1px;
+    font-size: 14px;
+    color: var(--cdu-white);
+}
+
 /* Responsive Anpassungen für mobile Geräte */
 @media (max-width: 600px) {
     h1 {
