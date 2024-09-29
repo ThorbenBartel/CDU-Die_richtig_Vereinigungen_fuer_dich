@@ -55,14 +55,14 @@ h1 {
 h2 {
     font-size: 1.8em;
     font-family: var(--headline-font);
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 /* Neuer Abschnitt für Erklärungstext */
 .description-text {
     font-size: 1.2em;
     color: var(--cdu-black);
-    text-align: center;
+    text-align: left;
     margin-bottom: 20px;
 }
 
@@ -162,14 +162,14 @@ input[type="checkbox"]:checked::after {
 /* Quiz Styling */
 #fragenummer {
     font-size: 1.2em;
-    text-align: center;
+    text-align: left;
     color: var(--cdu-black);
     margin-bottom: 10px;
 }
 
 #fragetext {
     font-size: 1.5em;
-    text-align: center;
+    text-align: left;
     margin-bottom: 20px;
     color: var(--cdu-black);
 }
