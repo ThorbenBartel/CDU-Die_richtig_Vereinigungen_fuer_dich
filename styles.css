@@ -328,14 +328,43 @@ button#weiter-button:hover {
     margin: 0;
 }
 
-.veranstaltung h4 {
-    font-size: 1.3em;
-    margin-bottom: 10px;
+/* Veranstaltung Styling */
+.veranstaltung {
+    margin-top: 5px; /* Weniger Abstand zwischen den Blöcken */
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
 }
 
+/* Veranstaltungstitel Styling */
+.veranstaltung h4 {
+    font-size: 1.2em;
+    margin-bottom: 3px; /* Weniger Abstand unter der Überschrift */
+    margin-top: 5px; /* Weniger Abstand oberhalb der Überschrift */
+}
+
+/* Veranstaltung Styling */
 .veranstaltung p {
     font-size: 1.1em;
-    margin-bottom: 5px;
+    margin-bottom: 0; /* Kein Abstand zwischen den Absätzen */
+    padding-bottom: 0; /* Kein zusätzlicher Innenabstand */
+    line-height: 1.2; /* Kompakterer Zeilenabstand */
+}
+
+.veranstaltung p strong {
+    display: inline-block;
+    margin-bottom: 0; /* Kein Abstand unter den fettgedruckten Texten */
+}
+
+/* Link zum Anmelden */
+.veranstaltung a {
+    color: #52b7c1; /* Türkisfarbener Link */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.veranstaltung a:hover {
+    text-decoration: underline; /* Unterstreichen beim Hover */
 }
 
 /* Checkbox Styling */
