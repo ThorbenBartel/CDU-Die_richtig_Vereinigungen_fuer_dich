@@ -28,11 +28,10 @@
         alter = berechneAlter(birthdate);
     } else {
         console.error('Kein Geburtsdatum vorhanden oder ungültig');
-        // Hier können Sie festlegen, wie Sie mit einem fehlenden Geburtsdatum umgehen möchten
         alter = null;
     }
 
-    // **Neuer Filter für Benutzer unter 12 Jahren**
+    // Filter für Benutzer unter 12 Jahren
     if (alter !== null && alter < 12) {
         vereinigungen = []; // Alle Vereinigungen entfernen
     } else {
@@ -62,7 +61,6 @@
                 if (vereinigung.name === 'SU' && alter < 60) {
                     include = false;
                 }
-                // Bedingung für CDA, KPV, MIT, OMV
                 if ((vereinigung.name === 'CDA' || vereinigung.name === 'KPV' || vereinigung.name === 'MIT' || vereinigung.name === 'OMV' || vereinigung.name === 'SU' || vereinigung.name === 'EKA' || vereinigung.name === 'LSU') && alter < 18) {
                     include = false;
                 }
@@ -72,14 +70,13 @@
         });
     }
 
-
     // Überprüfen, ob noch Vereinigungen vorhanden sind
     if (vereinigungen.length === 0) {
         document.getElementById('ergebnistext').innerHTML = "Es wurden keine passenden Vereinigungen gefunden oder sie sind noch zu jung für die Union.";
         return;
     }
 
-    // **PLZ zu Stadt zuordnen**
+    // PLZ zu Stadt zuordnen und Veranstaltungen laden
     fetch('plz_nrw.json')
         .then(response => response.json())
         .then(plzData => {
@@ -87,8 +84,8 @@
 
             if (stadt) {
                 console.log(`Die Stadt zur Postleitzahl ${postalcode} ist ${stadt}`);
-                
-                // **Veranstaltungen laden**
+
+                // Veranstaltungen laden
                 fetch('veranstaltungen.json')
                     .then(response => response.json())
                     .then(veranstaltungenData => {
@@ -119,19 +116,20 @@
                     <summary>
                     <div class="ergebnis-name"><strong>${vereinigung.langName}</strong></div>
                     <div class="ergebnis-bar">
-                        <div class="ergebnis-fill" style="width: ${prozent}%"></div>
+                    <div class="ergebnis-fill" style="width: ${prozent}%"></div>
                     </div>
                     <div class="ergebnis-prozent"><strong>${prozent}%</strong></div>
                     </summary>
                     <div class="details-content">
                     <p><strong>Beschreibung:</strong> ${vereinigung.beschreibung ? vereinigung.beschreibung : 'Keine Beschreibung vorhanden'}</p>
-                    <a href="${vereinigung.website}" target="_blank" ><strong>Mitglied werden</strong></a>
+                    <button class="full-width-button" onclick="window.open('${vereinigung.website}', '_blank')">Mitglied werden</button>
             `;
             
             // Füge Hinweis und Veranstaltungen hinzu, wenn vorhanden
             const vereinigungVeranstaltungen = veranstaltungen[stadt]?.[vereinigung.name] || [];
             if (vereinigungVeranstaltungen.length > 0) {
                 ergebnisText += `
+                    <div class="trennlinie"></div> <!-- Türkisfarbene Trennlinie -->
                     <div class="veranstaltung-hinweis">
                         <h3>Veranstaltungen</h3>
                     </div>
@@ -147,10 +145,9 @@
                             <p><strong>Anmeldung:</strong> <a href="${v.link}" target="_blank">Hier anmelden</a></p>
                             <p><strong>Hotline:</strong> ${v.hotline}</p>
                         </div>
-                  `;
+                    `;
                 });
             }
-            
 
             ergebnisText += `
                     </div>

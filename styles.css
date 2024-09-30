@@ -115,6 +115,7 @@ input, select {
     box-sizing: border-box;
 }
 
+/* Standard Button */
 button {
     padding: 15px;
     background-color: var(--cdu-turquoise);
@@ -286,9 +287,34 @@ button#weiter-button:hover {
     border-radius: 8px;
 }
 
+/* Zusätzlicher Button für Vereinigungen */
+.btn-vereinigung {
+    display: inline-block;
+    width: 100%; /* Über gesamte Breite */
+    padding: 15px;
+    background-color: var(--cdu-turquoise);
+    border: none;
+    border-radius: 5px;
+    color: var(--cdu-white);
+    font-size: 1.2em;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.btn-vereinigung:hover {
+    background-color: var(--cdu-blue);
+}
+
+/* Trennstrich */
+.trennlinie {
+    border-top: 2px solid var(--cdu-turquoise); /* Türkisfarbene Trennlinie */
+    margin: 20px 0; /* Abstand zur besseren Lesbarkeit */
+}
+
 /* Hinweis "Veranstaltungen" */
 .veranstaltung-hinweis {
-    margin-top: 20px;
+    margin-top: 5px;
     padding: 10px;
     background-color: var(--cdu-gold); /* Orangefarbener Hintergrund */
     border-radius: 5px;
