@@ -22,13 +22,6 @@
         "beschreibung": "Die Christlich-Demokratische Arbeitnehmerschaft ist die Vereinigung der Arbeitnehmer in der CDU und CSU. Sie setzt sich für die Interessen von Arbeitnehmern ein und vertritt diese in der Partei."
       },
       {
-        "name": "KPV",
-        "langName": "Kommunalpolitische Vereinigung (KPV)",
-        "punkte": 0,
-        "website": "http://kpv.de/mitgliedsantrag/",
-        "beschreibung": "Die Kommunalpolitische Vereinigung ist die Vereinigung der kommunalpolitisch engagierten Mitglieder der CDU und CSU. Sie setzt sich für die Interessen der Kommunen und ihrer Bürger ein und vertritt diese in der Partei."
-      },
-      {
         "name": "MIT",
         "langName": "Mittelstands- und Wirtschaftsvereinigung (MIT)",
         "punkte": 0,
@@ -36,46 +29,11 @@
         "beschreibung": "Die Mittelstands- und Wirtschaftsvereinigung ist die Vereinigung der mittelständischen Unternehmer in der CDU und CSU. Sie setzt sich für die Interessen des Mittelstands ein und vertritt diese in der Partei."
       },
       {
-        "name": "OMV",
-        "langName": "Ost- und Mitteldeutsche Vereinigung (OMV)",
-        "punkte": 0,
-        "website": "https://www.omv.cdu.de/ueber-uns/mitglied-werden",
-        "beschreibung": "Die Ost- und Mitteldeutsche Vereinigung ist die Vereinigung der Mitglieder der CDU und CSU aus den neuen Bundesländern und Berlin. Sie setzt sich für die Interessen der ost- und mitteldeutschen Länder ein und vertritt diese in der Partei."
-      },
-      {
-        "name": "SU",
-        "langName": "Senioren-Union (SU)",
-        "punkte": 0,
-        "website": "https://www.senioren-union.de/mitgliedschaft",
-        "beschreibung": "Die Senioren-Union ist die Vereinigung der älteren Mitglieder der CDU und CSU. Sie setzt sich für die Interessen der Senioren ein und vertritt diese in der Partei."
-      },
-      {
-        "name": "EAK",
-        "langName": "Evangelischer Arbeitskreis (EAK)",
-        "punkte": 0,
-        "website": "https://www.eak-cducsu.de/artikel/mitgliedschaft",
-        "beschreibung": "Der Evangelische Arbeitskreis ist die Vereinigung der evangelischen Mitglieder der CDU und CSU. Er setzt sich für die Interessen der evangelischen Christen ein und vertritt diese in der Partei."
-      },
-      {
         "name": "RCDS",
         "langName": "Ring Christlich-Demokratischer Studenten (RCDS)",
         "punkte": 0,
         "website": "https://www.rcds.de/vor-ort/",
         "beschreibung": "Der Ring Christlich-Demokratischer Studenten ist die Vereinigung der christlich-demokratischen Studenten in Deutschland. Er setzt sich für die Interessen der Studenten ein und vertritt diese in der Partei."
-      },
-      {
-        "name": "LSU",
-        "langName": "Lesben und Schwule in der Union (LSU)",
-        "punkte": 0,
-        "website": "https://www.lsu-deutschlands.de/mach-mit",
-        "beschreibung": "Lesben und Schwule in der Union ist die Vereinigung der homosexuellen Mitglieder der CDU und CSU. Sie setzt sich für die Rechte von Lesben und Schwulen ein und vertritt diese in der Partei."
-      },
-      {
-        "name": "SU ",
-        "langName": "Schüler Union (SU)",
-        "punkte": 0,
-        "website": "https://www.schueler-union.de/mitmachen/eintritt",
-        "beschreibung": "Die Schüler Union ist die Vereinigung der Schüler in der CDU und CSU. Sie setzt sich für die Interessen der Schüler ein und vertritt diese in der Partei."
       }
     ]
   }
